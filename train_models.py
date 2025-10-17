@@ -65,28 +65,28 @@ def generate_training_data():
 
 def main():
     """Train deep learning models"""
-    print("🧬 FoldAI Deep Learning Model Training")
+    print(" FoldAI Deep Learning Model Training")
     print("=" * 45)
-    print("🤖 Training state-of-the-art protein structure models")
+    print(" Training state-of-the-art protein structure models")
     print()
     
     # Check for GPU
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    print(f"🖥️  Using device: {device}")
+    print(f"  Using device: {device}")
     if device == 'cuda':
         print(f"   GPU: {torch.cuda.get_device_name(0)}")
     print()
     
     # Initialize predictor
-    print("🧠 Initializing deep learning predictor...")
+    print(" Initializing deep learning predictor...")
     predictor = DeepLearningPredictor(device=device)
     
     # Generate training data
-    print("📊 Generating training data...")
+    print(" Generating training data...")
     sequences, structures, stabilities = generate_training_data()
     
     # Train models
-    print("🎯 Training deep learning models...")
+    print(" Training deep learning models...")
     print("   • Secondary structure prediction")
     print("   • Protein stability prediction")
     print("   • Contact map prediction")
@@ -99,10 +99,10 @@ def main():
         epochs=20
     )
     
-    print("✅ Training completed!")
-    print("💾 Models saved to models/ directory")
+    print(" Training completed!")
+    print(" Models saved to models/ directory")
     print()
-    print("🚀 Your deep learning models are ready!")
+    print(" Your deep learning models are ready!")
     print("   Run: python src/main_deep.py")
     print("   To use the trained models for predictions")
 

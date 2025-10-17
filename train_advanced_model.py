@@ -66,41 +66,41 @@ def generate_advanced_training_data():
 
 def main():
     """Train the advanced protein function prediction model"""
-    print("🧬 FoldAI Advanced Model Training")
+    print(" FoldAI Advanced Model Training")
     print("=" * 40)
-    print("🤖 Training state-of-the-art multi-modal protein function predictor")
-    print("🔬 ESM-2 + GNN + Multi-Modal Fusion + Function-Specific Attention")
+    print(" Training state-of-the-art multi-modal protein function predictor")
+    print(" ESM-2 + GNN + Multi-Modal Fusion + Function-Specific Attention")
     print()
     
     # Check for GPU
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    print(f"🖥️  Using device: {device}")
+    print(f"  Using device: {device}")
     if device == 'cuda':
         print(f"   GPU: {torch.cuda.get_device_name(0)}")
         print(f"   Memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
     print()
     
     # Initialize advanced predictor
-    print("🧠 Initializing advanced protein function predictor...")
+    print(" Initializing advanced protein function predictor...")
     start_time = time.time()
     
     predictor = AdvancedProteinPredictorAI(device=device)
     
     init_time = time.time() - start_time
-    print(f"   ✅ Initialized in {init_time:.2f} seconds")
+    print(f"    Initialized in {init_time:.2f} seconds")
     print()
     
     # Generate training data
-    print("📊 Generating advanced training data...")
+    print(" Generating advanced training data...")
     sequences, functions = generate_advanced_training_data()
     
-    print(f"   📈 Training samples: {len(sequences)}")
-    print(f"   🎯 Function categories: {len(set(functions))}")
-    print(f"   📊 Average sequence length: {np.mean([len(seq) for seq in sequences]):.1f}")
+    print(f"    Training samples: {len(sequences)}")
+    print(f"    Function categories: {len(set(functions))}")
+    print(f"    Average sequence length: {np.mean([len(seq) for seq in sequences]):.1f}")
     print()
     
     # Train model
-    print("🎯 Training advanced multi-modal model...")
+    print(" Training advanced multi-modal model...")
     print("   • Phase 1: ESM-2 Transformer Encoder")
     print("   • Phase 2: Graph Neural Networks")
     print("   • Phase 3: Multi-Modal Fusion")
@@ -118,12 +118,12 @@ def main():
     
     training_time = time.time() - training_start
     
-    print(f"✅ Training completed in {training_time:.2f} seconds!")
-    print("💾 Model saved to models/ directory")
+    print(f" Training completed in {training_time:.2f} seconds!")
+    print(" Model saved to models/ directory")
     print()
     
     # Test the trained model
-    print("🧪 Testing trained model...")
+    print(" Testing trained model...")
     test_sequences = sequences[:3]
     test_functions = functions[:3]
     
@@ -131,17 +131,17 @@ def main():
         prediction = predictor.predict_comprehensive(seq)
         
         print(f"   Test {i+1}:")
-        print(f"   🤖 Predicted: {prediction['predicted_function']} (confidence: {prediction['function_confidence']:.1%})")
-        print(f"   ✅ True Function: {predictor.function_categories[true_func]}")
+        print(f"    Predicted: {prediction['predicted_function']} (confidence: {prediction['function_confidence']:.1%})")
+        print(f"    True Function: {predictor.function_categories[true_func]}")
         
         if prediction['predicted_function'] == predictor.function_categories[true_func]:
-            print(f"   🎯 CORRECT!")
+            print(f"    CORRECT!")
         else:
             print(f"   ❌ Incorrect")
         print()
     
-    print("🚀 Advanced Model Training Complete!")
-    print("💡 Your model is ready for production use!")
+    print(" Advanced Model Training Complete!")
+    print(" Your model is ready for production use!")
     print("   Run: python src/main_advanced.py")
     print("   To use the trained model for predictions")
 

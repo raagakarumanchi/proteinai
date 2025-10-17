@@ -158,8 +158,8 @@ if __name__ == '__main__':
     os.makedirs('static/css', exist_ok=True)
     os.makedirs('static/js', exist_ok=True)
     
-    print("🧬 FoldAI Web App Starting...")
-    print("🌐 Open your browser to: http://localhost:5000")
-    print("⚡ Ready to predict protein structures!")
+    print(" FoldAI Web App Starting...")
+    print(" Open your browser to: http://localhost:5000")
+    print(" Ready to predict protein structures!")
     
     app.run(debug=True, host='0.0.0.0', port=5000)

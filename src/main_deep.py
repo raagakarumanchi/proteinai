@@ -18,29 +18,29 @@ import torch
 
 def main():
     """Deep learning-powered protein structure prediction"""
-    print("🧬 FoldAI Deep Learning - Advanced Protein Structure Predictor")
+    print(" FoldAI Deep Learning - Advanced Protein Structure Predictor")
     print("=" * 65)
-    print("🤖 State-of-the-art deep learning models")
-    print("⚡ Transformer + CNN + LSTM architecture")
-    print("🎯 Trained on thousands of protein structures")
+    print(" State-of-the-art deep learning models")
+    print(" Transformer + CNN + LSTM architecture")
+    print(" Trained on thousands of protein structures")
     print()
     
     # Check for GPU
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    print(f"🖥️  Using device: {device}")
+    print(f"  Using device: {device}")
     if device == 'cuda':
         print(f"   GPU: {torch.cuda.get_device_name(0)}")
         print(f"   Memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
     print()
     
     # Initialize deep learning predictor
-    print("🧠 Initializing deep learning models...")
+    print(" Initializing deep learning models...")
     predictor = DeepLearningPredictor(device=device)
     visualizer = SequenceVisualizer()
     uniprot = UniProtClient()
     
     # Get protein data
-    print("📡 Fetching protein data...")
+    print(" Fetching protein data...")
     proteins = uniprot.search_proteins("enzyme", limit=5)
     
     if proteins.empty:
@@ -55,16 +55,16 @@ def main():
         sequences = proteins['sequence'].dropna().tolist()[:3]
         names = proteins['protein_name'].tolist()[:3]
     
-    print(f"🎯 Analyzing {len(sequences)} proteins with deep learning...")
+    print(f" Analyzing {len(sequences)} proteins with deep learning...")
     print()
     
     # Deep learning predictions
     for i, (seq, name) in enumerate(zip(sequences, names)):
-        print(f"🧬 Protein {i+1}: {name}")
+        print(f" Protein {i+1}: {name}")
         print(f"   Length: {len(seq)} amino acids")
         
         # Deep learning secondary structure prediction
-        print("   🤖 Deep learning structure prediction...")
+        print("    Deep learning structure prediction...")
         structure_result = predictor.predict_secondary_structure(seq)
         
         # Deep learning stability prediction
@@ -72,7 +72,7 @@ def main():
         stability_result = predictor.predict_stability(seq)
         
         # Deep learning contact map prediction
-        print("   🔗 Deep learning contact prediction...")
+        print("    Deep learning contact prediction...")
         contact_map = predictor.predict_contact_map(seq)
         
         # Deep learning aggregation prediction
@@ -80,16 +80,16 @@ def main():
         aggregation_result = predictor.predict_aggregation(seq)
         
         # Display results
-        print(f"   🧬 Structure: {structure_result['helix_content']:.1%} helix, "
+        print(f"    Structure: {structure_result['helix_content']:.1%} helix, "
               f"{structure_result['sheet_content']:.1%} sheet, "
               f"{structure_result['coil_content']:.1%} coil")
         print(f"   ⚖️  Stability: {stability_result['stability_score']:.3f}/1.0")
-        print(f"   🔗 Aggregation: {aggregation_result['aggregation_score']:.3f}/1.0")
-        print(f"   🎯 Confidence: {stability_result['confidence']:.1%}")
+        print(f"    Aggregation: {aggregation_result['aggregation_score']:.3f}/1.0")
+        print(f"    Confidence: {stability_result['confidence']:.1%}")
         print()
     
     # Generate advanced visualizations
-    print("📊 Creating advanced deep learning visualizations...")
+    print(" Creating advanced deep learning visualizations...")
     
     if sequences:
         # Deep learning structure visualization
@@ -112,23 +112,23 @@ def main():
         structure_3d = visualizer.plot_3d_structure_prediction(sequences[0])
         structure_3d.write_html("data/deep_learning_3d.html")
         
-        print("   ✅ Saved: data/deep_learning_structure.html")
-        print("   ✅ Saved: data/deep_learning_contacts.html")
-        print("   ✅ Saved: data/deep_learning_3d.html")
+        print("    Saved: data/deep_learning_structure.html")
+        print("    Saved: data/deep_learning_contacts.html")
+        print("    Saved: data/deep_learning_3d.html")
     
     print()
-    print("🚀 Deep Learning Results:")
+    print(" Deep Learning Results:")
     print("   • Transformer-based sequence embeddings")
     print("   • CNN + LSTM architecture for structure prediction")
     print("   • Deep neural networks for stability analysis")
     print("   • Advanced contact map prediction")
     print("   • State-of-the-art accuracy")
     print()
-    print("💡 This is the future of protein science!")
+    print(" This is the future of protein science!")
     print("   Deep learning models trained on thousands of structures!")
     print()
-    print("🔗 Share your results: data/deep_learning_*.html")
-    print("🌟 Tag us: #FoldAI #DeepLearning #ProteinScience #AI")
+    print(" Share your results: data/deep_learning_*.html")
+    print(" Tag us: #FoldAI #DeepLearning #ProteinScience #AI")
 
 
 if __name__ == "__main__":

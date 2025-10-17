@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to FoldAI! We welcome contributions from the community and are excited to work with you.
 
-## 🎯 How to Contribute
+## How to Contribute
 
 ### **Reporting Bugs**
 - Use the GitHub issue tracker
@@ -23,7 +23,7 @@ Thank you for your interest in contributing to FoldAI! We welcome contributions 
 - Add tests if applicable
 - Submit a pull request
 
-## 🔧 Development Setup
+## Development Setup
 
 ### **Prerequisites**
 - Python 3.8 or higher
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
-## 📝 Code Style
+## Code Style
 
 ### **Python Standards**
 - Follow PEP 8 style guide
@@ -71,7 +71,7 @@ def predict_protein_function(sequence: str) -> Dict[str, float]:
     pass
 ```
 
-## 🧪 Testing
+## Testing
 
 ### **Adding Tests**
 - Create tests in `tests/` directory
@@ -91,7 +91,7 @@ pytest
 pytest --cov=src
 ```
 
-## 📚 Documentation
+## Documentation
 
 ### **Code Documentation**
 - Add docstrings to all functions
@@ -104,27 +104,27 @@ pytest --cov=src
 - Include request/response examples
 - Update OpenAPI specs if applicable
 
-## 🎯 Areas for Contribution
+## Areas for Contribution
 
 ### **High Priority**
-- 🔬 **New AI Models**: Implement cutting-edge architectures
-- 📊 **Visualizations**: Create better protein visualizations
-- 🧪 **Testing**: Add comprehensive test suite
-- 📚 **Documentation**: Improve API documentation
+- **New AI Models**: Implement cutting-edge architectures
+- **Visualizations**: Create better protein visualizations
+- **Testing**: Add comprehensive test suite
+- **Documentation**: Improve API documentation
 
 ### **Medium Priority**
-- 🌐 **Web Interface**: Improve Flask web app
-- 📱 **Mobile App**: Build React Native version
-- ⚡ **Performance**: Optimize model inference
-- 🔧 **DevOps**: CI/CD pipeline setup
+- **Web Interface**: Improve Flask web app
+- **Mobile App**: Build React Native version
+- **Performance**: Optimize model inference
+- **DevOps**: CI/CD pipeline setup
 
 ### **Low Priority**
-- 🎨 **UI/UX**: Improve user interface
-- 🌍 **Internationalization**: Multi-language support
-- 📈 **Analytics**: Usage tracking and metrics
-- 🔒 **Security**: Security audit and improvements
+- **UI/UX**: Improve user interface
+- **Internationalization**: Multi-language support
+- **Analytics**: Usage tracking and metrics
+- **Security**: Security audit and improvements
 
-## 🤝 Community Guidelines
+## Community Guidelines
 
 ### **Be Respectful**
 - Use inclusive language
@@ -138,13 +138,13 @@ pytest --cov=src
 - Ask questions when unsure
 - Share knowledge and resources
 
-## 🏆 Recognition
+## Recognition
 
 ### **Contributor Benefits**
-- 📝 Listed in CONTRIBUTORS.md
-- 🌟 Featured in release notes
-- 🎯 Mentioned in social media
-- 🏆 Eligible for rewards
+- Listed in CONTRIBUTORS.md
+- Featured in release notes
+- Mentioned in social media
+- Eligible for rewards
 
 ### **Contributor Levels**
 - **Bronze**: 1-5 contributions
@@ -152,18 +152,18 @@ pytest --cov=src
 - **Gold**: 16+ contributions
 - **Platinum**: Major feature contributions
 
-## 📞 Getting Help
+## Getting Help
 
 ### **Resources**
-- 📚 Documentation: README.md
-- 💬 Discussions: GitHub Discussions
-- 🐛 Issues: GitHub Issues
-- 📧 Email: contact@foldai.com
+- Documentation: README.md
+- Discussions: GitHub Discussions
+- Issues: GitHub Issues
+- Email: contact@foldai.com
 
 ### **Community**
-- 🌟 Star the repository
-- 🍴 Fork for your projects
-- 📢 Share on social media
-- 🤝 Connect with other contributors
+- Star the repository
+- Fork for your projects
+- Share on social media
+- Connect with other contributors
 
-Thank you for contributing to FoldAI! Together, we're advancing protein science with AI. 🧬🤖
+Thank you for contributing to FoldAI! Together, we're advancing protein science with AI.

@@ -20,24 +20,24 @@ import time
 
 def main():
     """Complete advanced protein function prediction demonstration"""
-    print("🧬 FoldAI Advanced Protein Function Predictor")
+    print(" FoldAI Advanced Protein Function Predictor")
     print("=" * 60)
-    print("🤖 Phase 1: ESM-2 Transformer Encoder")
-    print("🔗 Phase 2: Graph Neural Networks")
-    print("🧠 Phase 3: Multi-Modal Fusion + Function-Specific Attention")
-    print("⚡ State-of-the-art deep learning architecture")
+    print(" Phase 1: ESM-2 Transformer Encoder")
+    print(" Phase 2: Graph Neural Networks")
+    print(" Phase 3: Multi-Modal Fusion + Function-Specific Attention")
+    print(" State-of-the-art deep learning architecture")
     print()
     
     # Check for GPU
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    print(f"🖥️  Using device: {device}")
+    print(f"  Using device: {device}")
     if device == 'cuda':
         print(f"   GPU: {torch.cuda.get_device_name(0)}")
         print(f"   Memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
     print()
     
     # Initialize advanced AI system
-    print("🧠 Initializing advanced AI systems...")
+    print(" Initializing advanced AI systems...")
     start_time = time.time()
     
     advanced_predictor = AdvancedProteinPredictorAI(device=device)
@@ -46,11 +46,11 @@ def main():
     uniprot = UniProtClient()
     
     init_time = time.time() - start_time
-    print(f"   ✅ Initialized in {init_time:.2f} seconds")
+    print(f"    Initialized in {init_time:.2f} seconds")
     print()
     
     # Get protein data
-    print("📡 Fetching protein data...")
+    print(" Fetching protein data...")
     proteins = uniprot.search_proteins("enzyme", limit=6)
     
     if proteins.empty:
@@ -72,11 +72,11 @@ def main():
         names = proteins['protein_name'].tolist()[:6]
         known_functions = ["Unknown"] * len(sequences)
     
-    print(f"🎯 Analyzing {len(sequences)} proteins with advanced AI...")
+    print(f" Analyzing {len(sequences)} proteins with advanced AI...")
     print()
     
     # Phase 1: ESM-2 + Structure Prediction
-    print("🔬 Phase 1: ESM-2 Transformer + Structure Analysis")
+    print(" Phase 1: ESM-2 Transformer + Structure Analysis")
     print("-" * 50)
     
     structure_results = []
@@ -92,12 +92,12 @@ def main():
         sheet_pct = structure['structure_string'].count('E') / len(seq) * 100
         coil_pct = structure['structure_string'].count('C') / len(seq) * 100
         
-        print(f"   🧬 Structure: {helix_pct:.1f}% helix, {sheet_pct:.1f}% sheet, {coil_pct:.1f}% coil")
-        print(f"   🎯 Quality: {structure['prediction_quality']['quality_score']:.2f}/1.0")
+        print(f"    Structure: {helix_pct:.1f}% helix, {sheet_pct:.1f}% sheet, {coil_pct:.1f}% coil")
+        print(f"    Quality: {structure['prediction_quality']['quality_score']:.2f}/1.0")
     print()
     
     # Phase 2: Graph Neural Network Analysis
-    print("🔗 Phase 2: Graph Neural Network Analysis")
+    print(" Phase 2: Graph Neural Network Analysis")
     print("-" * 45)
     
     graph_analysis = []
@@ -106,18 +106,18 @@ def main():
         
         # Create graph representation
         graph = advanced_predictor.create_protein_graph(seq)
-        print(f"   📊 Graph: {graph.x.shape[0]} nodes, {graph.edge_index.shape[1]} edges")
+        print(f"    Graph: {graph.x.shape[0]} nodes, {graph.edge_index.shape[1]} edges")
         
         # Analyze graph properties
         node_degrees = torch.bincount(graph.edge_index[0])
         avg_degree = node_degrees.float().mean().item()
-        print(f"   🔗 Average node degree: {avg_degree:.1f}")
+        print(f"    Average node degree: {avg_degree:.1f}")
         
         graph_analysis.append(graph)
     print()
     
     # Phase 3: Multi-Modal Fusion + Function Prediction
-    print("🧠 Phase 3: Multi-Modal Fusion + Function Prediction")
+    print(" Phase 3: Multi-Modal Fusion + Function Prediction")
     print("-" * 55)
     
     prediction_results = []
@@ -129,23 +129,23 @@ def main():
         prediction = advanced_predictor.predict_comprehensive(seq, structure['structure_string'])
         pred_time = time.time() - start_pred_time
         
-        print(f"   🤖 Predicted Function: {prediction['predicted_function']}")
-        print(f"   🎯 Confidence: {prediction['function_confidence']:.1%}")
-        print(f"   📊 Broad Category: {prediction['broad_category']} ({prediction['broad_confidence']:.1%})")
+        print(f"    Predicted Function: {prediction['predicted_function']}")
+        print(f"    Confidence: {prediction['function_confidence']:.1%}")
+        print(f"    Broad Category: {prediction['broad_category']} ({prediction['broad_confidence']:.1%})")
         print(f"   ⚖️  Stability Score: {prediction['stability_score']:.3f}")
         print(f"   🔥 Active Site Probability: {prediction['active_site_probability']:.3f}")
-        print(f"   ⚡ Prediction Time: {pred_time:.2f} seconds")
+        print(f"    Prediction Time: {pred_time:.2f} seconds")
         
         if known_functions[i] != "Unknown":
-            print(f"   ✅ Known Function: {known_functions[i]}")
+            print(f"    Known Function: {known_functions[i]}")
             if prediction['predicted_function'].lower() in known_functions[i].lower():
-                print(f"   🎯 CORRECT PREDICTION!")
+                print(f"    CORRECT PREDICTION!")
         
         prediction_results.append(prediction)
         print()
     
     # Functional Region Analysis
-    print("🔍 Advanced Functional Region Analysis")
+    print(" Advanced Functional Region Analysis")
     print("-" * 40)
     
     for i, (seq, name, prediction) in enumerate(zip(sequences, names, prediction_results)):
@@ -154,7 +154,7 @@ def main():
         # Analyze functional regions
         functional_analysis = advanced_predictor.analyze_functional_regions(seq)
         
-        print(f"   🎯 Functional Regions: {functional_analysis['total_regions']}")
+        print(f"    Functional Regions: {functional_analysis['total_regions']}")
         print(f"   ⭐ High Importance: {functional_analysis['high_importance_regions']}")
         
         if functional_analysis['functional_regions']:
@@ -163,7 +163,7 @@ def main():
         print()
     
     # Generate Advanced Visualizations
-    print("📊 Creating Advanced Multi-Modal Visualizations")
+    print(" Creating Advanced Multi-Modal Visualizations")
     print("-" * 50)
     
     if sequences:
@@ -186,22 +186,22 @@ def main():
         structure_3d = visualizer.plot_3d_structure_prediction(sequences[0])
         structure_3d.write_html("data/advanced_3d.html")
         
-        print("   ✅ Saved: data/advanced_functions.html")
-        print("   ✅ Saved: data/advanced_structure.html")
-        print("   ✅ Saved: data/advanced_3d.html")
+        print("    Saved: data/advanced_functions.html")
+        print("    Saved: data/advanced_structure.html")
+        print("    Saved: data/advanced_3d.html")
     
     # Performance Summary
     total_time = time.time() - start_time
-    print(f"\n🚀 Advanced AI System Performance Summary")
+    print(f"\n Advanced AI System Performance Summary")
     print("=" * 50)
-    print(f"   ⚡ Total Runtime: {total_time:.2f} seconds")
-    print(f"   🧬 Proteins Analyzed: {len(sequences)}")
-    print(f"   🤖 Average Prediction Time: {total_time/len(sequences):.2f} seconds/protein")
-    print(f"   🎯 Functions Predicted: {len(set([p['predicted_function'] for p in prediction_results]))}")
-    print(f"   📊 Functional Regions Identified: {sum([advanced_predictor.analyze_functional_regions(seq)['total_regions'] for seq in sequences])}")
+    print(f"    Total Runtime: {total_time:.2f} seconds")
+    print(f"    Proteins Analyzed: {len(sequences)}")
+    print(f"    Average Prediction Time: {total_time/len(sequences):.2f} seconds/protein")
+    print(f"    Functions Predicted: {len(set([p['predicted_function'] for p in prediction_results]))}")
+    print(f"    Functional Regions Identified: {sum([advanced_predictor.analyze_functional_regions(seq)['total_regions'] for seq in sequences])}")
     print()
     
-    print("💡 Advanced AI Capabilities Demonstrated:")
+    print(" Advanced AI Capabilities Demonstrated:")
     print("   • ESM-2 Transformer Encoder (Phase 1)")
     print("   • Graph Neural Networks (Phase 2)")
     print("   • Multi-Modal Fusion (Phase 3)")
@@ -211,11 +211,11 @@ def main():
     print("   • Stability Analysis")
     print("   • Functional Region Identification")
     print()
-    print("🌟 This is the future of protein science!")
+    print(" This is the future of protein science!")
     print("   State-of-the-art AI that understands proteins!")
     print()
-    print("🔗 Share your results: data/advanced_*.html")
-    print("🚀 Tag us: #FoldAI #AdvancedAI #ProteinScience #DeepLearning")
+    print(" Share your results: data/advanced_*.html")
+    print(" Tag us: #FoldAI #AdvancedAI #ProteinScience #DeepLearning")
 
 
 if __name__ == "__main__":

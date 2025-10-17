@@ -17,7 +17,7 @@ import numpy as np
 
 
 def main():
-    print("🧬 FoldAI - Protein Structure Analysis Demo")
+    print(" FoldAI - Protein Structure Analysis Demo")
     print("=" * 50)
     
     # Initialize components
@@ -27,7 +27,7 @@ def main():
     visualizer = SequenceVisualizer()
     
     # 1. Fetch Protein Data
-    print("\n📡 Fetching protein data from UniProt...")
+    print("\n Fetching protein data from UniProt...")
     proteins = uniprot.search_proteins("kinase", limit=15)
     
     if proteins.empty:
@@ -46,7 +46,7 @@ def main():
     print(f"Analyzing {len(sequences)} protein sequences...")
     
     # 2. Secondary Structure Prediction
-    print("\n🔬 Secondary Structure Prediction...")
+    print("\n Secondary Structure Prediction...")
     for i, (seq, name) in enumerate(zip(sequences[:3], protein_names[:3])):
         print(f"\nAnalyzing {name}:")
         secondary_structure = structure_predictor.predict_secondary_structure(seq)
@@ -72,7 +72,7 @@ def main():
         print(f"  • Disulfide potential: {stability['features']['disulfide_potential']:.3f}")
     
     # 4. Aggregation Analysis
-    print("\n🔗 Aggregation Propensity Analysis...")
+    print("\n Aggregation Propensity Analysis...")
     for i, (seq, name) in enumerate(zip(sequences[:3], protein_names[:3])):
         print(f"\nAggregation analysis for {name}:")
         aggregation = structure_predictor.predict_aggregation_propensity(seq)
@@ -88,7 +88,7 @@ def main():
                 print(f"    - Positions {hotspot['start']}-{hotspot['end']}: {hotspot['sequence']}")
     
     # 5. Mutation Analysis
-    print("\n🧪 Mutation Effect Analysis...")
+    print("\n Mutation Effect Analysis...")
     test_sequence = sequences[0] if sequences else "MKWVTFISLLLLFSSAYSRGVFRRDTHKSEIAHRFKDLGE"
     
     # Test different types of mutations
@@ -110,7 +110,7 @@ def main():
         print(f"    Charge change: {effect['charge_change']:+.1f}")
     
     # 6. Functional Domain Analysis
-    print("\n🔍 Functional Domain Identification...")
+    print("\n Functional Domain Identification...")
     for i, (seq, name) in enumerate(zip(sequences[:2], protein_names[:2])):
         print(f"\nDomain analysis for {name}:")
         domains = structure_predictor.identify_functional_domains(seq)
@@ -155,7 +155,7 @@ def main():
     print(f"Stability improvement: {engineered_stability - original_stability:+.3f}")
     
     # 8. Generate Visualizations
-    print("\n📊 Generating Interactive Visualizations...")
+    print("\n Generating Interactive Visualizations...")
     
     if sequences:
         # Composition plot
@@ -176,7 +176,7 @@ def main():
         structure_fig.write_html("data/protein_structure_3d.html")
         print("  • Saved: data/protein_structure_3d.html")
     
-    print("\n✅ Protein Structure Analysis Demo Complete!")
+    print("\n Protein Structure Analysis Demo Complete!")
     print("\nKey Capabilities Demonstrated:")
     print("  • Secondary structure prediction using Chou-Fasman algorithm")
     print("  • Protein stability analysis and engineering")

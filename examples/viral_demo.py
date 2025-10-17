@@ -15,9 +15,9 @@ import numpy as np
 
 def viral_demo():
     """The demo that will go viral!"""
-    print("🧬 FoldAI - The Viral Protein Predictor")
+    print(" FoldAI - The Viral Protein Predictor")
     print("=" * 45)
-    print("⚡ Predicting protein structures in REAL TIME!")
+    print(" Predicting protein structures in REAL TIME!")
     print()
     
     # Initialize AI
@@ -31,13 +31,13 @@ def viral_demo():
         "Hemoglobin": "MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH"
     }
     
-    print("🎯 Analyzing famous proteins...")
+    print(" Analyzing famous proteins...")
     print()
     
     results = []
     
     for name, sequence in viral_proteins.items():
-        print(f"⚡ {name}")
+        print(f" {name}")
         print(f"   Length: {len(sequence)} amino acids")
         
         # Predict everything instantly
@@ -51,10 +51,10 @@ def viral_demo():
         sheet_pct = structure['structure_string'].count('E') / len(sequence) * 100
         coil_pct = structure['structure_string'].count('C') / len(sequence) * 100
         
-        print(f"   🧬 Structure: {helix_pct:.1f}% helix, {sheet_pct:.1f}% sheet, {coil_pct:.1f}% coil")
+        print(f"    Structure: {helix_pct:.1f}% helix, {sheet_pct:.1f}% sheet, {coil_pct:.1f}% coil")
         print(f"   ⚖️  Stability: {stability['stability_score']:.2f}/1.0")
-        print(f"   🔗 Aggregation risk: {aggregation['aggregation_score']:.2f}/1.0")
-        print(f"   🎯 Quality: {structure['prediction_quality']['quality_score']:.2f}/1.0")
+        print(f"    Aggregation risk: {aggregation['aggregation_score']:.2f}/1.0")
+        print(f"    Quality: {structure['prediction_quality']['quality_score']:.2f}/1.0")
         print()
         
         results.append({
@@ -67,7 +67,7 @@ def viral_demo():
         })
     
     # Create viral visualizations
-    print("📊 Creating shareable visualizations...")
+    print(" Creating shareable visualizations...")
     
     for i, result in enumerate(results):
         name = result['name'].replace(' ', '_').lower()
@@ -88,24 +88,24 @@ def viral_demo():
         )
         ss_fig.write_html(f"data/{name}_structure.html")
     
-    print("   ✅ Saved viral visualizations!")
+    print("    Saved viral visualizations!")
     print()
     
     # Viral summary
-    print("🚀 FoldAI Results Summary:")
+    print(" FoldAI Results Summary:")
     print("   • Predicted 3 famous protein structures")
     print("   • Generated 9 interactive visualizations")
     print("   • All done in under 10 seconds!")
     print()
-    print("💡 This is the future of protein science!")
+    print(" This is the future of protein science!")
     print("   No expensive labs, just AI magic! ✨")
     print()
-    print("🔗 Share your results:")
+    print(" Share your results:")
     for result in results:
         name = result['name'].replace(' ', '_').lower()
         print(f"   • {result['name']}: data/{name}_*.html")
     print()
-    print("🌟 Tag us: #FoldAI #ProteinScience #AI #Viral")
+    print(" Tag us: #FoldAI #ProteinScience #AI #Viral")
 
 
 if __name__ == "__main__":

@@ -17,10 +17,10 @@ import numpy as np
 
 def main():
     """Viral demo - predict protein structures instantly"""
-    print("🧬 FoldAI - Predict Protein Structures in Seconds")
+    print("FoldAI - Predict Protein Structures in Seconds")
     print("=" * 55)
-    print("⚡ No more waiting months for protein structures!")
-    print("🤖 AI predicts 3D structures from sequences instantly")
+    print("No more waiting months for protein structures!")
+    print("AI predicts 3D structures from sequences instantly")
     print()
     
     # Initialize
@@ -28,8 +28,8 @@ def main():
     predictor = StructurePredictor()
     visualizer = SequenceVisualizer()
     
-    # Get viral protein examples
-    print("🔍 Fetching viral proteins...")
+    # Get protein examples
+    print("Fetching protein examples...")
     proteins = uniprot.search_proteins("virus", limit=5)
     
     if proteins.empty:
@@ -44,12 +44,12 @@ def main():
         sequences = proteins['sequence'].dropna().tolist()[:3]
         names = proteins['protein_name'].tolist()[:3]
     
-    print(f"🎯 Analyzing {len(sequences)} proteins...")
+    print(f"Analyzing {len(sequences)} proteins...")
     print()
     
-    # Instant structure prediction
+    # Structure prediction
     for i, (seq, name) in enumerate(zip(sequences, names)):
-        print(f"⚡ Protein {i+1}: {name}")
+        print(f"Protein {i+1}: {name}")
         print(f"   Length: {len(seq)} amino acids")
         
         # Predict structure
@@ -62,14 +62,14 @@ def main():
         sheet_count = len(structure['sheet'])
         coil_count = len(structure['coil'])
         
-        print(f"   🧬 Structure: {helix_count} helices, {sheet_count} sheets, {coil_count} coils")
-        print(f"   ⚖️  Stability: {stability['stability_score']:.2f}/1.0")
-        print(f"   🔗 Aggregation risk: {aggregation['aggregation_score']:.2f}/1.0")
-        print(f"   🎯 Quality: {structure['prediction_quality']['quality_score']:.2f}/1.0")
+        print(f"   Structure: {helix_count} helices, {sheet_count} sheets, {coil_count} coils")
+        print(f"   Stability: {stability['stability_score']:.2f}/1.0")
+        print(f"   Aggregation risk: {aggregation['aggregation_score']:.2f}/1.0")
+        print(f"   Quality: {structure['prediction_quality']['quality_score']:.2f}/1.0")
         print()
     
-    # Generate viral visualizations
-    print("📊 Creating viral visualizations...")
+    # Generate visualizations
+    print("Creating visualizations...")
     
     # Structure plot
     if sequences:
@@ -78,32 +78,32 @@ def main():
             structure['structure_string'],
             structure['confidence_scores']
         )
-        structure_fig.write_html("data/viral_structure.html")
+        structure_fig.write_html("data/structure.html")
         
         # 3D structure
         structure_3d = visualizer.plot_3d_structure_prediction(sequences[0])
-        structure_3d.write_html("data/viral_3d.html")
+        structure_3d.write_html("data/structure_3d.html")
         
         # Contact map
         contact_map = predictor.predict_contact_map(sequences[0])
         contact_fig = visualizer.plot_contact_map(contact_map)
-        contact_fig.write_html("data/viral_contacts.html")
+        contact_fig.write_html("data/contacts.html")
         
-        print("   ✅ Saved: data/viral_structure.html")
-        print("   ✅ Saved: data/viral_3d.html") 
-        print("   ✅ Saved: data/viral_contacts.html")
+        print("   Saved: data/structure.html")
+        print("   Saved: data/structure_3d.html") 
+        print("   Saved: data/contacts.html")
     
     print()
-    print("🚀 FoldAI Results:")
-    print("   • Predicted structures in seconds (not months!)")
-    print("   • Identified stability hotspots")
-    print("   • Found aggregation risks")
-    print("   • Generated 3D visualizations")
+    print("FoldAI Results:")
+    print("   - Predicted structures in seconds")
+    print("   - Identified stability hotspots")
+    print("   - Found aggregation risks")
+    print("   - Generated 3D visualizations")
     print()
-    print("💡 This is the future of protein science!")
+    print("This is the future of protein science!")
     print("   No more expensive experiments, just AI predictions!")
     print()
-    print("🔗 Share your results: data/viral_*.html")
+    print("Share your results: data/*.html")
 
 
 if __name__ == "__main__":
